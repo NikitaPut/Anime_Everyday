@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anime Everyday</title>
+  <link rel="icon" type="image/x-icon" href="Anime_Everyday.ico">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+
+    p.exserif { font-family: "Times New Roman", Times, serif; }
+    p.exsansserif { font-family: Arial, Helvetica, sans-serif; }
+
+    .nav_ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav_li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .nav_a {
+      color: white;
+      text-decoration: none;
+    }
+    .nav_a:hover {
+      color: #ccc;
+    }
+    .main {
+      padding: 20px;
+    }
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .parallax {
+      background-image: url('https://wallpaperaccess.com/full/9336992.gif');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      font-size: 3rem;
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+    }
+    
+    h1 {
+      color: rgb(255, 255, 255);
+      font-family: 'CustomFont', sans-serif;
+    }
+
+    .bg-text {
+        background: linear-gradient(to right, orange, violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+    <nav>
+    <ul class="nav_ul">
+        <li class="nav_li"><a href="index.html" class="nav_a">Главная</a></li>
+        <li class="nav_li"><a href="anime.html" class="nav_a">Аниме</a></li>
+        <li class="nav_li"><a href="about.html" class="nav_a">О нас</a></li>
+    </ul>
+    </nav>
+  </header>
+  <div class="parallax">
+    <div class="content">
+      <h1>Добро пожаловать на сайт Anime Everyday!</h1>
+      <p class="bg-text exsansserif">Здесь вы найдете много занимательных аниме.</p>
+    </div>
+  </div>
+<main align="center" class="main">
+  <h2>Аниме сайт</h2>
+  <p>Добро пожаловать на наш сайт, посвященный аниме!</p>
+ </main>
+ 
+ <footer class="footer">
+  <p align="right">&copy; 2023 Anime Everyday</p>
+ </footer>
+</body>
+</html>
