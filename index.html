@@ -4,24 +4,38 @@
   <title>Anime Everyday</title>
   <link rel="icon" type="image/x-icon" href="Anime_Everyday.ico">
   <style>
+    /* Set the font and remove default margins and paddings for the body */
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #e9ebee;
     }
+
+    /* Top header styles */
     .header {
       position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       width: 100%;
       box-sizing: border-box;
       background-color: #333;
       color: white;
       padding: 10px;
+      z-index: 999;
     }
 
+    /* Specify font families for paragraphs with specific classes */
     p.exserif { font-family: "Times New Roman", Times, serif; }
     p.exsansserif { font-family: Arial, Helvetica, sans-serif; }
 
+    /* Styling for navigation */
     .nav_ul {
       list-style: none;
       margin: 0;
@@ -38,9 +52,13 @@
     .nav_a:hover {
       color: #ccc;
     }
+
+    /* Padding for main content section */
     .main {
       padding: 20px;
     }
+
+    /* Styling for footer section */
     .footer {
       background-color: #333;
       color: white;
@@ -48,6 +66,7 @@
       text-align: center;
     }
 
+    /* Parallax effect with background image */
     .parallax {
       background-image: url('https://wallpaperaccess.com/full/9336992.gif');
       background-attachment: fixed;
@@ -63,24 +82,32 @@
       font-size: 3rem;
     }
 
+    /* Styling for transparent content section over the parallax background */
     .content {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
     }
-  
+
+    /* Styling for h1 tag with custom font and gradient text */
     h1 {
       color: rgb(255, 255, 255);
       font-family: 'CustomFont', sans-serif;
     }
+    
     .bg-text {
         background: linear-gradient(to right, orange, violet);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    /* Styling for footer section with social icons and menu links */
     .footer {
       position: relative;
-      width: 100%;
-      background: #ff7c35;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background: linear-gradient(to right, orange, violet);
       min-height: 100px;
       padding: 20px 50px;
       display: flex;
@@ -124,111 +151,170 @@
     .menulink:hover {
       opacity: 1;
     }
-    .waves {
-      position: relative;
-      overflow: hidden;
+
+    /* ************************** */
+    .card {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 2px;
     }
-    .wave {
-      position: absolute;
-      top: -100px;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: url("https://i.ibb.co/wQZVxxk/wave.png");
-      background-size: 1000px 100px;
+    .alert, .btn .badge, .card, .page-link {
+    position: relative;
     }
-    #wave1 {
-      z-index: 1000;
-      opacity: 1;
-      bottom: 0;
-      animation: animateWaves 4s linear infinite;
+    .card, .card-deck {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     }
-    #wave2 {
-      z-index: 999;
-      opacity: 0.5;
-      bottom: 10px;
-      animation: animate 4s linear infinite !important;
+    .card, .navbar-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     }
-    #wave3 {
-      z-index: 1000;
-      opacity: 0.2;
-      bottom: 15px;
-      animation: animateWaves 3s linear infinite;
+    .col-12, .col-lg-6, .col-md-12, .col-xl-4{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
     }
-    #wave4 {
-      z-index: 999;
-      opacity: 0.7;
-      bottom: 20px;
-      animation: animate 3s linear infinite;
+    .col-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
     }
-    @keyframes animateWaves {
-      0% {
-        background-position-x: 1000px;
-      }
-      100% {
-        background-position-x: 0px;
-      }
+    /* @media (min-width: 768px) */
+    .col-md-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
     }
-    @keyframes animate {
-      0% {
-        background-position-x: -1000px;
-      }
-      100% {
-        background-position-x: 0px;
-      }
+    .mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+    }
+    div {
+    display: block;
+    }
+    .card-header:first-child {
+    border-radius: calc(2px - 1px) calc(2px - 1px) 0 0;
+    }
+    .card-header {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .card-header, .card-subtitle, .card-text:last-child {
+    margin-bottom: 0;
+    }
+    .card-header {
+    padding: 0.75rem 1rem;
+    background-color: rgba(0,0,0,.03);
+    }
+    .last-update-container {
+    max-height: 100%;
+    }
+    .scroll {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    }
+    .collapse {
+    display: none;
+    }
+    .card-header+.list-group .list-group-item:first-child {
+    border-top: 0;
+    }
+    .list-group-item:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    }
+    .border-left-0 {
+    border-left: 0!important;
+    }
+    .border-bottom-0 {
+    border-bottom: 0!important;
+    }
+    .border-right-0 {
+    border-right: 0!important;
+    }
+    .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    }
+    .list-group-item-action {
+    width: 100%;
+    color: #212529;
+    text-align: inherit;
+    }
+    a {
+    color: #ff5c57;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    touch-action: manipulation;
+    }
+    .bb-dashed-1 {
+    border-bottom: 1px dashed;
+    }
+
+    [aria-expanded=false][data-effect-open]:before {
+    content: attr(data-effect-open);
     }
   </style>
 </head>
 <body>
-<header class="header">
-    <nav>
-    <ul class="nav_ul">
-        <li class="nav_li"><a href="index.html" class="nav_a">Главная</a></li>
-        <li class="nav_li"><a href="anime.html" class="nav_a">Аниме</a></li>
-        <li class="nav_li"><a href="about.html" class="nav_a">О нас</a></li>
-        <li class="nav_li"><a href="services.html" class="nav_a">Услуги</a></li>
-        <li class="nav_li"><a href="contact.html" class="nav_a">Контакты</a></li>
-    </ul>
-  </nav>
-</header>
-  <div class="parallax">
-    <div class="content">
-      <h1>Добро пожаловать на сайт Anime Everyday!</h1>
-      <p class="bg-text exsansserif">Здесь вы найдете много занимательных аниме.</p>
+  <header class="header">
+      <nav>
+      <ul class="nav_ul">
+          <li class="nav_li"><a href="index.html" class="nav_a">Главная</a></li><!-- Ссылка на главную страницу -->
+          <li class="nav_li"><a href="anime.html" class="nav_a">Аниме</a></li><!-- Ссылка на страницу с аниме -->
+          <li class="nav_li"><a href="about.html" class="nav_a">О нас</a></li><!-- Ссылка на страницу с информацией о сайте -->
+          <li class="nav_li"><a href="services.html" class="nav_a">Услуги</a></li><!-- Ссылка на страницу с предоставляемыми услугами -->
+          <li class="nav_li"><a href="contact.html" class="nav_a">Контакты</a></li><!-- Ссылка на страницу с контактной информацией -->
+      </ul>
+    </nav>
+  </header>
+    <div class="parallax"><!-- Див для создания параллакс эффекта на заднем плане -->
+      <div class="content"><!-- Див для создания контента на переднем плане -->
+        <h1>Добро пожаловать на сайт Anime Everyday!</h1><!-- Заголовок -->
+        <p class="bg-text exsansserif">Здесь вы найдете много занимательных аниме.</p><!-- Текст с фоновым стилем -->
+      </div>
     </div>
-  </div>
-<main align="center" class="main">
-  <h2>Аниме сайт</h2>
-  <p>Добро пожаловать на наш сайт, посвященный аниме!</p>
- </main>
- <footer class="footer">
-  <div class="waves">
-    <div class="wave" id="wave1"></div>
-    <div class="wave" id="wave2"></div>
-    <div class="wave" id="wave3"></div>
-    <div class="wave" id="wave4"></div>
-  </div>
-  <ul class="social-icon">
-    <li class="social-iconitem"><a class="social-iconlink" href="#">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </a></li>
-    <li class="social-iconitem"><a class="social-iconlink" href="#">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </a></li>
-    <li class="social-iconitem"><a class="social-iconlink" href="#">
-        <ion-icon name="logo-linkedin"></ion-icon>
-      </a></li>
-    <li class="social-iconitem"><a class="social-iconlink" href="#">
-        <ion-icon name="logo-instagram"></ion-icon>
-      </a></li>
-  </ul>
-  <ul class="menu">
-    <li class="menuitem"><a class="menulink" href="#">Home</a></li>
-    <li class="menuitem"><a class="menulink" href="#">About</a></li>
-    <li class="menuitem"><a class="menulink" href="#">Services</a></li>
-    <li class="menuitem"><a class="menulink" href="#">Contact</a></li>
-  </ul>
-  <p>&copy;2023 Anime Everyday | All Rights Reserved</p>
-</footer>
-</body>
-</html>
+  <main align="center" class="main">
+    <h2>Аниме сайт</h2><!-- Заголовок -->
+    <p>Добро пожаловать на наш сайт, посвященный аниме!</p><!-- Обычный текст -->
+    </main>
+
+    <div class="col-12 col-md-12 col-lg-6 col-xl-4 mb-3 mb-md-0 content-block"><div class="card" role="tablist"><div class="card-header"><h3 class="card-title h4">Расписание аниме</h3><!--noindex--><div class="text-muted small"><b>Внимание!</b> В графике указаны даты выхода эпизодов на телеэкранах Японии. На сайте появится в течение дня либо на следующий день.</div><!--/noindex--></div><div class="list-group"><div class="card-header last-update-header d-flex align-items-center" role="tab"><div class="h6 d-flex mr-auto mb-0"><span><span class="mr-1">Понедельник</span><span class="d-none d-xl-inline"></span></span></div><a class="bb-dashed-1" data-toggle="collapse" href="#slide-toggle-monday" data-effect-open="Развернуть" data-effect-close="Свернуть" aria-expanded="false"></a></div><div role="tabpanel" class="last-update-container scroll collapse" id="slide-toggle-monday" aria-expanded="false"><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a16f098ed67202103848.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/odnushka-lorda-demonov-i-geroya-2327"><span class="last-update-title font-weight-600">Однушка лорда демонов и героя</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(11 сент. 15:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/648d90a603ce4066475147.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/mest-masamune-r-2337"><span class="last-update-title font-weight-600">Месть Масамунэ! R</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(11 сент. 17:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649956d9d9954375518976.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/sindualnost-nuar-2347"><span class="last-update-title font-weight-600">Синдуальность: Нуар</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(11 сент. 18:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a315f685af1922666499.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/istoriya-o-mononoke-2-2363"><span class="last-update-title font-weight-600">История о мононокэ 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(11 сент. 18:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/63aae7489fec0034494645.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/treugolnik-ayakasi-2219"><span class="last-update-title font-weight-600">Треугольник Аякаси</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(11 сент. 19:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/648d5d2e7863a666655207.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/sladkoe-perevoploschenie-2336"><span class="last-update-title font-weight-600">Сладкое перевоплощение</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">12 серия</div><div class="text-gray-dark-6 text-truncate">(11 сент. 19:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649c0c39b93fb233179291.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/iz-mechtatelya-v-realista-2351"><span class="last-update-title font-weight-600">Из мечтателя в реалиста</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(11 сент. 20:00)</div></div></div></div></div></div></div><div class="card-header last-update-header d-flex align-items-center" role="tab"><div class="h6 d-flex mr-auto mb-0"><span><span class="mr-1">Вторник</span><span class="d-none d-xl-inline"></span></span></div><a class="bb-dashed-1" data-toggle="collapse" href="#slide-toggle-tuesday" data-effect-open="Развернуть" data-effect-close="Свернуть" aria-expanded="false"></a></div><div role="tabpanel" class="last-update-container scroll collapse" id="slide-toggle-tuesday" aria-expanded="false"><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649eacb457807426250822.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/moya-vozlyublennaya-zabyla-svoi-ochki-2354"><span class="last-update-title font-weight-600">Моя возлюбленная забыла свои очки</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(12 сент. 17:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/648585d6c044a086850348.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/helk-2326"><span class="last-update-title font-weight-600">Хельк</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(12 сент. 19:29)</div></div></div></div></div></div></div><div class="card-header last-update-header d-flex align-items-center" role="tab"><div class="h6 d-flex mr-auto mb-0"><span><span class="mr-1">Среда</span><span class="d-none d-xl-inline"></span></span></div><a class="bb-dashed-1" data-toggle="collapse" href="#slide-toggle-wednesday" data-effect-open="Развернуть" data-effect-close="Свернуть" aria-expanded="false"></a></div><div role="tabpanel" class="last-update-container scroll collapse" id="slide-toggle-wednesday" aria-expanded="false"><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64981792682a1299999311.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/ya-pererodilsya-torgovym-avtomatom-i-skitayus-po-labirintu-2346"><span class="last-update-title font-weight-600">Я переродился торговым автоматом и скитаюсь по лабиринту</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(13 сент. 16:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649ff5d11c928811767763.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/velikiy-iz-brodyachih-psov-5-2358"><span class="last-update-title font-weight-600">Великий из бродячих псов 5</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(13 сент. 17:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/6488cf6db7489718094151.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/moy-schastlivyy-brak-2328"><span class="last-update-title font-weight-600">Мой счастливый брак</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(13 сент. 17:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64f0dbc229327107668906.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/prinesennaya-v-zhertvu-princessa-i-car-zverey-2281"><span class="last-update-title font-weight-600">Принесённая в жертву Принцесса и Царь зверей</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">22 серия</div><div class="text-gray-dark-6 text-truncate">(13 сент. 18:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/648ad8e4f2e7b353072260.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/svyataya-sesiliya-i-pastor-lourens-2331"><span class="last-update-title font-weight-600">Святая Сесилия и пастор Лоуренс</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(13 сент. 18:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a17174ddf36438458410.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/fars-iz-ubiystva-devushki-nezhiti-2361"><span class="last-update-title font-weight-600">Фарс из убийства девушки-нежити</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(13 сент. 18:55)</div></div></div></div></div></div></div><div class="card-header last-update-header d-flex align-items-center" role="tab"><div class="h6 d-flex mr-auto mb-0"><span><span class="mr-1">Четверг (Сегодня)</span><span class="d-none d-xl-inline"></span></span></div><a class="bb-dashed-1" data-toggle="collapse" href="#slide-toggle-thursday" data-effect-open="Развернуть" data-effect-close="Свернуть" aria-expanded="true"></a></div><div role="tabpanel" class="last-update-container scroll collapse show" id="slide-toggle-thursday" aria-expanded="true"><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64b0199e543ea620655209.jpg" data-was-processed="true" style="background-image: url(&quot;https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64b0199e543ea620655209.jpg&quot;);"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/shpionskiy-klass-2-2372"><span class="last-update-title font-weight-600">Шпионский класс 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">9 серия</div><div class="text-gray-dark-6 text-truncate">(7 сент. 16:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a969fe9aecd728138272.jpg" data-was-processed="true" style="background-image: url(&quot;https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a969fe9aecd728138272.jpg&quot;);"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/ura-mechte-eto-mygo-2356"><span class="last-update-title font-weight-600">Ура мечте! Это MyGO!</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">13 серия</div><div class="text-gray-dark-6 text-truncate">(7 сент. 17:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64b00fb2076ad775029671.jpg" data-was-processed="true" style="background-image: url(&quot;https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64b00fb2076ad775029671.jpg&quot;);"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/povelitel-tmy-na-podrabotke-ss1-2-2371"><span class="last-update-title font-weight-600">Повелитель тьмы на подработке!! 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">9 серия</div><div class="text-gray-dark-6 text-truncate">(7 сент. 17:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64f0dbe500423242175587.jpg" data-was-processed="true" style="background-image: url(&quot;https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64f0dbe500423242175587.jpg&quot;);"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/magicheskaya-bitva-2-2332"><span class="last-update-title font-weight-600">Магическая битва 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">7 серия</div><div class="text-gray-dark-6 text-truncate">(7 сент. 17:56)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649d575eedff2474869416.jpg" data-was-processed="true" style="background-image: url(&quot;https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649d575eedff2474869416.jpg&quot;);"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/koroleva-stavshaya-prichinoy-tragedii-sdelaet-dlya-naroda-vse-chto-v-ee-silah-2352"><span class="last-update-title font-weight-600">Королева, ставшая причиной трагедии, сделает для народа всё, что в её силах</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(7 сент. 18:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a44110252fe851868925.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/brodyaga-kensin-2365"><span class="last-update-title font-weight-600">Бродяга Кэнсин</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(7 сент. 18:55)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64f0dc14de990632732957.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/nepobedimyy-svyatoy-put-kotorym-ya-idu-chtoby-vyzhit-v-drugom-mire-2339"><span class="last-update-title font-weight-600">Непобедимый святой: Путь, которым я иду, чтобы выжить в другом мире</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">9 серия</div><div class="text-gray-dark-6 text-truncate">(7 сент. 19:28)</div></div></div></div></div></div></div><div class="card-header last-update-header d-flex align-items-center" role="tab"><div class="h6 d-flex mr-auto mb-0"><span><span class="mr-1">Пятница</span><span class="d-none d-xl-inline"></span></span></div><a class="bb-dashed-1" data-toggle="collapse" href="#slide-toggle-friday" data-effect-open="Развернуть" data-effect-close="Свернуть" aria-expanded="false"></a></div><div role="tabpanel" class="last-update-container scroll collapse" id="slide-toggle-friday" aria-expanded="false"><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64f0dbaceef00969688012.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/skazka-o-saharnom-yabloke-chast-2-2366"><span class="last-update-title font-weight-600">Сказка о сахарном яблоке. Часть 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(8 сент. 15:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649c0a7d8c235664423914.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/fermer-aristokrat-2350"><span class="last-update-title font-weight-600">Фермер-аристократ</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(8 сент. 15:54)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649359de6710e761305857.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/agent-vremeni-2-2343"><span class="last-update-title font-weight-600">Агент времени 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(8 сент. 18:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/6496b55fb758c648716024.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/sem-glavenstvuyuschih-mechey-2345"><span class="last-update-title font-weight-600">Семь главенствующих мечей</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(8 сент. 18:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a969d9c623b320344006.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/devushka-na-chas-3-2338"><span class="last-update-title font-weight-600">Девушка на час 3</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">9 серия</div><div class="text-gray-dark-6 text-truncate">(8 сент. 19:23)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64911f912f027901761969.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/geny-iskusstvennogo-intellekta-2340"><span class="last-update-title font-weight-600">Гены искусственного интеллекта</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">9 серия</div><div class="text-gray-dark-6 text-truncate">(8 сент. 19:53)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a969cb1db66751750898.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/kot-master-na-vse-lapki-segodnya-snova-grustit-2330"><span class="last-update-title font-weight-600">Кот, мастер на все лапки, сегодня снова грустит</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(8 сент. 20:23)</div></div></div></div></div></div></div><div class="card-header last-update-header d-flex align-items-center" role="tab"><div class="h6 d-flex mr-auto mb-0"><span><span class="mr-1">Суббота</span><span class="d-none d-xl-inline"></span></span></div><a class="bb-dashed-1" data-toggle="collapse" href="#slide-toggle-saturday" data-effect-open="Развернуть" data-effect-close="Свернуть" aria-expanded="false"></a></div><div role="tabpanel" class="last-update-container scroll collapse" id="slide-toggle-saturday" aria-expanded="false"><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64d4b226e0af8131469752.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/miks-istoriya-meysey-2-2279"><span class="last-update-title font-weight-600">Микс: История Мэйсэй 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">22 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 11:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64899c3f3e5da414397848.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/hotya-ya-tolko-pervogo-urovnya-no-s-etim-unikalnym-navykom-ya-stanu-silneyshim-2329"><span class="last-update-title font-weight-600">Хотя я только первого уровня, но с этим уникальным навыком я стану сильнейшим</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 16:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/6492bed6dde05597461660.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/lzhec-lzhec-2342"><span class="last-update-title font-weight-600">Лжец, лжец</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 16:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649d67b3d2021281902474.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/horimiya-kusochek-2353"><span class="last-update-title font-weight-600">Хоримия: Кусочек</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 17:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64b2fa0fb1c31805585765.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/atele-rayzy-koroleva-tmy-i-taynoe-pristanische-2355"><span class="last-update-title font-weight-600">Ателье Райзы: Королева тьмы и тайное пристанище</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 18:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64b2fa5f4bd8b192201930.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/nepriznannyy-shkoloy-vladyka-demonov-2-2190"><span class="last-update-title font-weight-600">Непризнанный школой владыка демонов 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 18:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64b2f99d57764023066173.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/nulevoy-edem-2-2289"><span class="last-update-title font-weight-600">Нулевой Эдем 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">23 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 18:55)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a06d6082726337964633.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/ayaka-2359"><span class="last-update-title font-weight-600">Аяка</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">11 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 19:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a090601c73f960943804.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/malenkaya-sempay-s-moey-raboty-2360"><span class="last-update-title font-weight-600">Маленькая сэмпай с моей работы</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">9 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 19:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64a9a66b022b2073140029.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/hram-nikto-ne-mozhet-zhit-v-odinochestve-2357"><span class="last-update-title font-weight-600">Храм: Никто не может жить в одиночестве</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 19:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/649ac7805c87d402595066.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/na-samom-dele-ya-samyy-silnyy-2349"><span class="last-update-title font-weight-600">На самом деле, я самый сильный?</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">9 серия</div><div class="text-gray-dark-6 text-truncate">(9 сент. 20:00)</div></div></div></div></div></div></div><div class="card-header last-update-header d-flex align-items-center" role="tab"><div class="h6 d-flex mr-auto mb-0"><span><span class="mr-1">Воскресенье</span><span class="d-none d-xl-inline"></span></span></div><a class="bb-dashed-1" data-toggle="collapse" href="#slide-toggle-sunday" data-effect-open="Развернуть" data-effect-close="Свернуть" aria-expanded="false"></a></div><div role="tabpanel" class="last-update-container scroll collapse" id="slide-toggle-sunday" aria-expanded="false"><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/643037f5a3dac974493604.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/v-begah-velikaya-missiya-2296"><span class="last-update-title font-weight-600">В бегах: Великая миссия</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">22 серия</div><div class="text-gray-dark-6 text-truncate">(10 сент. 3:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/5ab170d351312102639546.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/van-pis-65"><span class="last-update-title font-weight-600">Ван-Пис</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">1075 серия</div><div class="text-gray-dark-6 text-truncate">(10 сент. 3:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/6492bccecad5a252978706.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/predsmertnyy-spisok-zombi-2341"><span class="last-update-title font-weight-600">Предсмертный список зомби</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">8 серия</div><div class="text-gray-dark-6 text-truncate">(17 сент. 11:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64228826bc4ce485468129.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/siniy-orkestr-2270"><span class="last-update-title font-weight-600">Синий оркестр</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">20 серия</div><div class="text-gray-dark-6 text-truncate">(10 сент. 11:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64aae5c175040614050738.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/smertonosnyy-gercog-i-ego-chernaya-gornichnaya-2-2344"><span class="last-update-title font-weight-600">Смертоносный герцог и его чёрная горничная 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(10 сент. 16:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/6499d8d410c37564028018.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/yohane-iz-pargeliya-solnechnyy-svet-v-zerkale-2348"><span class="last-update-title font-weight-600">Йохане из паргелия: Солнечный свет в зеркале</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">12 серия</div><div class="text-gray-dark-6 text-truncate">(10 сент. 16:30)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64839d5283380493257832.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/klass-dlya-geroev-2325"><span class="last-update-title font-weight-600">Класс для героев</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(10 сент. 17:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64f0db3b8e838059743256.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/reinkarnaciya-bezrabotnogo-istoriya-o-priklyucheniyah-v-drugom-mire-2-2333"><span class="last-update-title font-weight-600">Реинкарнация безработного: История о приключениях в другом мире 2</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(10 сент. 18:00)</div></div></div></div></div></div><div class="list-group-item list-group-item-action border-left-0 border-right-0 border-bottom-0"><div class="media w-100 align-items-center"><div class="media-left last-update-img mr-2"><div class="img-square lazy br-50" data-original="https://animego.org/media/cache/thumbs_120x120/upload/anime/images/64afc7dca16d0667364523.jpg"></div></div><div class="media-body"><div class="d-flex align-items-center"><div class="d-flex mr-auto"><a class="card-link list-group-item-action bg-transparent" href="/anime/temnoe-sobranie-2334"><span class="last-update-title font-weight-600">Тёмное собрание</span></a></div><div class="ml-3 text-right"><div class="font-weight-600 text-truncate">10 серия</div><div class="text-gray-dark-6 text-truncate">(10 сент. 19:05)</div></div></div></div></div></div></div></div></div></div>
+
+   <footer class="footer">
+    <ul class="social-icon"><!-- Список социальных иконок -->
+      <li class="social-iconitem"><a class="social-iconlink" href="#">
+          <ion-icon name="logo-facebook"></ion-icon><!-- Иконка Facebook -->
+        </a></li>
+      <li class="social-iconitem"><a class="social-iconlink" href="#">
+          <ion-icon name="logo-twitter"></ion-icon><!-- Иконка Twitter -->
+        </a></li>
+      <li class="social-iconitem"><a class="social-iconlink" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon><!-- Иконка LinkedIn -->
+        </a></li>
+      <li class="social-iconitem"><a class="social-iconlink" href="#">
+          <ion-icon name="logo-instagram"></ion-icon><!-- Иконка Instagram -->
+        </a></li>
+    </ul>
+    <ul class="menu"><!-- Список ссылок на другие страницы -->
+      <li class="menuitem"><a class="menulink" href="#">Главная</a></li><!-- Ссылка на главную страницу -->
+      <li class="menuitem"><a class="menulink" href="#">О нас</a></li><!-- Ссылка на страницу с информацией о сайте -->
+      <li class="menuitem"><a class="menulink" href="#">Услуги</a></li><!-- Ссылка на страницу с предоставляемыми услугами -->
+      <li class="menuitem"><a class="menulink" href="#">Контакты</a></li><!-- Ссылка на страницу с контактной информацией -->
+    </ul>
+    <p>&copy;2023 Anime Everyday | All Rights Reserved</p><!-- Копирайт -->
+  </footer>
+  </body>
+  </html>
